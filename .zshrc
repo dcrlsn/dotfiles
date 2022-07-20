@@ -76,7 +76,12 @@ plugins=(
 	dotenv
 	archlinux
 	vscode
-	
+	macos
+	pyenv
+	github
+	rust
+	kubectl
+	docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 #Dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 #aliases
 alias vi=vim
