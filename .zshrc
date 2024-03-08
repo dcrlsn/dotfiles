@@ -23,6 +23,7 @@ fi
 case $_distro in
 *kali*) ICON="ﴣ" ;;
 *arch*) ICON="" ;;
+*endeavour*) ICON="" ;;
 *debian*) ICON="" ;;
 *raspbian*) ICON="" ;;
 *ubuntu*) ICON="" ;;
@@ -69,8 +70,10 @@ ku() {
 
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PATH="$PATH:$HOME/.local/bin/"
 
 #nvm
 export NVM_DIR="$HOME/.nvm"
@@ -81,7 +84,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 #pipenv
-[ -x "$(command -v pipenv)" ] && export PIPENV_PYTHON="$PYENV_ROOT/shims/python" && export WORKON_HOME="$HOME/.pyenv/versions"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python" && export WORKON_HOME="$HOME/.pyenv/versions"
 
 #viimed
 if [ -n "$(ls -A "$HOME/.local/bin/viimed/" 2>/dev/null)" ]; then
